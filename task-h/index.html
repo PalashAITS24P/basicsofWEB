@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Task H — Tailwind Modernized Form</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <header class="max-w-4xl mx-auto px-4 py-8">
+      <h1 class="text-2xl md:text-3xl font-bold">Task H — Registration Form (Tailwind)</h1>
+      <p class="mt-2 text-slate-600">Fill the form; valid submissions appear in the table below.</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 pb-16">
+
+        <section class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
+        <h2 class="text-xl font-semibold mb-4">Form</h2>
+
+        <form id="regForm" novalidate class="space-y-4">
+
+            <input type="hidden" id="timestamp" name="timestamp" />
+
+
+          <div class="flex flex-col gap-1">
+            <label for="fullName" class="font-medium">Full name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="First Last"
+              class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <small class="text-slate-500">At least 2 words, each ≥ 2 characters.</small>
+            <div class="text-red-600 text-sm min-h-5" id="errFullName"></div>
+          </div>
+
+
+          <div class="flex flex-col gap-1">
+            <label for="email" class="font-medium">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="name@example.com"
+              class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <small class="text-slate-500">Use a valid email format.</small>
+            <div class="text-red-600 text-sm min-h-5" id="errEmail"></div>
+          </div>
+
+
+          <div class="flex flex-col gap-1">
+            <label for="phone" class="font-medium">Phone number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+358 401234567 or 0401234567"
+              class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <small class="text-slate-500">Accepted: +358 with 8–10 digits or 0 with 8–10 digits.</small>
+            <div class="text-red-600 text-sm min-h-5" id="errPhone"></div>
+          </div>
+
+
+          <div class="flex flex-col gap-1">
+            <label for="birthDate" class="font-medium">Birth date</label>
+            <input
+              type="date"
+              id="birthDate"
+              name="birthDate"
+              class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <small class="text-slate-500">Not in the future; minimum age 13.</small>
+            <div class="text-red-600 text-sm min-h-5" id="errBirthDate"></div>
+          </div>
+
+
+          <div class="flex items-center gap-2">
+            <input type="checkbox" id="terms" name="terms" class="h-4 w-4 rounded border-slate-300" />
+            <label for="terms" class="text-slate-800">I accept the terms.</label>
+          </div>
+          <div class="text-red-600 text-sm min-h-5" id="errTerms"></div>
+
+
+          <div class="flex gap-3 pt-2">
+            <button
+              type="submit"
+              id="submitBtn"
+              class="rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            >
+              Submit
+            </button>
+            <button
+              type="button"
+              id="clearBtn"
+              class="rounded-md border border-slate-300 bg-white px-4 py-2 text-slate-800 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-300"
+            >
+              Clear form
+            </button>
+          </div>
+        </form>
+      </section>
+
+
+      <section class="mt-8 bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
+        <h2 class="text-xl font-semibold mb-4">Submissions</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full border-collapse">
+            <thead>
+              <tr class="border-b border-slate-200 bg-slate-100">
+                <th class="text-left px-3 py-2 text-slate-700 font-medium">Timestamp</th>
+                <th class="text-left px-3 py-2 text-slate-700 font-medium">Full name</th>
+                <th class="text-left px-3 py-2 text-slate-700 font-medium">Email</th>
+                <th class="text-left px-3 py-2 text-slate-700 font-medium">Phone</th>
+                <th class="text-left px-3 py-2 text-slate-700 font-medium">Birth date</th>
+                <th class="text-left px-3 py-2 text-slate-700 font-medium">Terms accepted</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
