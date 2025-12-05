@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order | Nordic Lens</title>
+  <meta name="description" content="Submit a rental order request with Nordic Lens." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="logo" href="index.html">Nordic Lens</a>
+      <a class="nav-link" href="catalog.html">See rentals</a>
+      <a class="nav-link" href="task-k/order.html" aria-current="page">Place an order</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="intro-title">
+      <h1 id="intro-title">Place your rental order</h1>
+      <p>Fill out the form below to request a rental. We’ll confirm availability and contact you shortly.</p>
+    </section>
+
+    <section class="order-form" aria-labelledby="form-title">
+      <h2 id="form-title">Rental Order Form</h2>
+      <form action="index.html" method="get">
+        
+        <fieldset>
+          <legend>Your information</legend>
+          <label for="name">Full name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email address:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="phone">Phone number:</label>
+          <input type="tel" id="phone" name="phone" required />
+        </fieldset>
+
+        <fieldset>
+          <legend>Rental details</legend>
+          <label for="item">Item to rent:</label>
+          <select id="item" name="item" required>
+            <option value="">-- Select an item --</option>
+            <option value="sony-a7iv">Sony A7 IV</option>
+            <option value="canon-r6">Canon EOS R6</option>
+            <option value="gopro-hero9">GoPro Hero 9</option>
+          </select>
+
+          <label for="start">Start date:</label>
+          <input type="date" id="start" name="start" required />
+
+          <label for="end">End date:</label>
+          <input type="date" id="end" name="end" required />
+
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" min="1" max="5" required />
+        </fieldset>
+
+        <label for="message">Special requests:</label>
+        <textarea id="message" name="message"></textarea>
+
+        <label>
+          <input type="checkbox" name="terms" required />
+          I accept the rental terms and privacy policy
+        </label>
+
+        <label>
+          <input type="checkbox" name="newsletter" />
+          Subscribe to newsletter
+        </label>
+
+        <button type="submit" class="btn btn-primary">Submit rental request</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <section aria-labelledby="contact-title">
+        <h3 id="contact-title">Contact</h3>
+        <ul>
+          <li><a href="mailto:hello@nordiclens.fi">hello@nordiclens.fi</a></li>
+          <li><a href="tel:+358400000000">+358 40 000 0000</a></li>
+        </ul>
+      </section>
+      <section aria-labelledby="location-title">
+        <h3 id="location-title">Location</h3>
+        <p>Espoo, Uusimaa, Finland</p>
+      </section>
+      <section aria-labelledby="social-title">
+        <h3 id="social-title">Social</h3>
+        <ul>
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+        </ul>
+      </section>
+    </div>
+    <small>© 2025 Nordic Lens. All rights reserved.</small>
+  </footer>
+</body>
+</html>
